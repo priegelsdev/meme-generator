@@ -1,7 +1,11 @@
 import Header from './Components/Header'
+import Form from './Components/Form'
 
 export default function App() {
   return (
-    <Header />
+    <div>
+      <Header />
+      <Form />
+    </div>
   )
 }

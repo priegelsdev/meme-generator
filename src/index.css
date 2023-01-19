@@ -24,3 +24,17 @@ header {
   width: 60px;
   margin-right: 0.75em;
 }
+
+main {
+  padding: 2.25em;
+}
+
+form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 1em;
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+} 
