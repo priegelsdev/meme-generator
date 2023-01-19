@@ -48,3 +48,15 @@ input {
   border: none;
   font-weight: bold;
 } 
+
+.meme-container {
+  margin-top: 2em;
+}
+
+.meme-img {
+  width: 50%;
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
