@@ -1,11 +1,11 @@
 import Header from './Components/Header'
-import Form from './Components/Form'
+import Meme from './Components/Meme'
 
 export default function App() {
   return (
     <div>
       <Header />
-      <Form />
+      <Meme />
     </div>
   )
 }
