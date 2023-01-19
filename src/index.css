@@ -35,6 +35,16 @@ form {
   gap: 1em;
 }
 
+input {
+  border: 1px solid #D5D4D8;
+  border-radius: 3px;
+  padding-left: 1em;
+}
+
 .submit-btn {
   grid-column: 1 / -1;
+  background: linear-gradient(90deg, #179131 0%, #35e90f 87%);
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
 } 
