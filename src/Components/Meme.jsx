@@ -1,26 +1,33 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import memesData from '../memesData'
 
 export default function Meme() {
-
-  //variables to use throughout this function
-  const memesArray = memesData.data.memes
-  let randomNum = Math.floor(Math.random() * memesArray.length)  
 
   //state that controls meme to be shown
   const [meme, setMeme] = useState({
     topCaption: "",
     bottomCaption: "",
-    imageUrl: memesArray[randomNum].url
+    imageUrl: "http://i.imgflip.com/1bij.jpg"
   })
 
   //state that has all the data from the meme api
-  const [allMemes, setAllMemes] = useState(memesArray)
+  const [allMemes, setAllMemes] = useState([])
 
+// hook (?) to load memes from api instead of hardcoded data in extra file; just once
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then(res => res.json())
+      .then(data => {
+        setAllMemes(data.data.memes)
+      })
+  }, [])
+
+// function to set state with meme image to state with new random meme image
   function getMeme() {
+    let randomNum = Math.floor(Math.random() * allMemes.length)  
     setMeme(prevState => ({
       ...prevState,
-      imageUrl: memesArray[randomNum].url
+      imageUrl: allMemes[randomNum].url
     }))
   } 
 
